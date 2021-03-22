@@ -1,0 +1,31 @@
+<html>
+  <head>
+    <script src="dom-event-tracker.js"></script>
+  </head>
+  <body>
+    <ul class="salutations">
+      <li class="en default">
+        Hello
+      </li>
+      <li class="en southern">
+        Howdy
+      </li>
+      <li class="en informal">
+        Hi
+      </li>
+      <li class="es default">
+        Hola
+      </li>
+    </ul>
+    <input type="number"></input>
+  </body>
+  <script>
+    const t = new DomEventTracker()
+    t.addSource("click")
+    t.addSource("keypress")
+    t.addSource("focus")
+    t.addSource("blur")
+    t.addSink(ev => console.log(ev))
+    t.start()
+  </script>
+</html>
